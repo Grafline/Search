@@ -1,2 +1,2 @@
-Search goods
-The package for CoreCommerceL5.5-Work
+<strong>Search goods</strong><br>
+The package for CoreEcommerceL5.5-Work
