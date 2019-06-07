@@ -9,6 +9,7 @@ class Search
 {
     protected $paginate;
     protected $object;
+    protected $key;
 
     use ValidatesRequests;
 
@@ -24,9 +25,14 @@ class Search
         $this->validate($request, ['search' => 'required|min:3']);
 
         $key = $request->input('search');
+        $this->key = $key;
         $query = $this->object->active()
             ->search($key);
             return $query->paginate($this->paginate);
+    }
+
+    public function requestSearch(){
+        return $this->key;
     }
 
 }
