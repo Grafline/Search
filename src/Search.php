@@ -27,7 +27,7 @@ class Search
         $key = $request->input('search');
         $this->key = $key;
         $query = $this->object->active()
-            ->search($key);
+            ->search($key, null, true);
             return $query->paginate($this->paginate);
     }
 
